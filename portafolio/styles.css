@@ -23,7 +23,7 @@ body {
     background: linear-gradient(
         var(--color3),
         var(--color4) 
-        );
+    );
     width: 100%;
     height: 100%;
 }
@@ -36,6 +36,7 @@ body {
     position: fixed;
     top: 0;
     background-color: var(--color3);
+    border-bottom: 1px solid var(--color2);
 }
 
 #navbar>ul {
@@ -53,6 +54,8 @@ a, h2 {
 }
 
 #navbar>ul li{
+    padding: 3px 2px;
+    height: 100%;
     margin: 6px;
 }
 
@@ -62,11 +65,10 @@ a:visited {
 
 a:hover {
     color: var(--color1);
-    font-size: 2.5rem;
+    transform: scale(1.1);
 }
 
 #navbar>ul li:hover {
-    margin: 0;
     background-color: var(--color4);
 }
 
@@ -102,7 +104,7 @@ main {
     );
     justify-content: center;
     align-items: center;
-    color: var(--color2)
+    color: var(--color2);
 }
 
 .welcome-section>h3{
@@ -141,7 +143,7 @@ main {
 }
 
 .project-grid {
-    width: 75%;
+    width: 90%;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto;
@@ -157,16 +159,56 @@ main {
 .project-grid img {
     margin: 0 auto;
     border-radius: 20px;
-    border: 0.3em solid var(--color5);
+    border: 0.2em solid var(--color5);
     max-width: 500px;
     max-height: 280px;
     width: auto;
 }
 
-@media only screen and (max-width: 800px){
+#contact {
+    width: 100%;
+    min-height: 60rem;
+    font-size: 2.5rem;
+    background:  linear-gradient(
+        360deg,
+        var(--color4)-30%,
+        var(--color3) 20%
+    );
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 4rem;
+}
+
+#contact a:hover  {
+    transform: scale(2);
+}
+.words-contact {
+    color:var(--color2)
+}
+
+.words-contact h1:first-of-type {
+    border-bottom: 1px solid var(--color2);
+    color:var(--color2)
+}
+
+.link-contact i {
+    color: var(--color5);
+}
+
+.link-contact a {
+    margin: 0 2rem;
+}
+
+.link-contact>a:hover i{
+    transform: scale(2);
+}
+
+@media only screen and (max-width: 1170px){
     
     .project-grid {
-        width: 75%;
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr;
         gap: 5rem;
@@ -175,9 +217,24 @@ main {
 
     .project-grid img {
         margin: 0 auto;
-        border-radius: 20px;
-        border: 0.3em solid var(--color5);
-        max-width: 300px;
+        max-width: 400px;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    
+    .project-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5rem;
+        margin: 0 auto;
+    }
+
+    .project-grid img {
+        margin: 0 auto;
+        max-width: 400px;
         width: auto;
     }
 }
